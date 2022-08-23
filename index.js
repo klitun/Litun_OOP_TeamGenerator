@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
 // const fs = require("fs");
-const Engineer = ("./lib/Engineer");
-const Intern = ("./lib/Intern");
-const Manager = ("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
 
 const Team = [];
 
@@ -18,7 +18,7 @@ inquirer.prompt([
             choices: ["Manager", "Engineer", "Intern", "No-one"]
         },
     ]).then(function (choice) {
-        switch (choice.menu) {
+        switch (choice.mainMenu) {
             case "Manager":
                 addManager();
                 break;
@@ -139,3 +139,7 @@ inquirer.prompt([
                 }         
                     
                 )};
+
+                // function buildHTML()
+
+                makeTeam();
