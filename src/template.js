@@ -1,17 +1,16 @@
 
 //Manager
 
-buildManager = (manager) => {
+const buildManager = (manager) => {
     return `
 <div class="card" style="width: 18rem; margin: 15px;">
     <div class="card-body bg-info">
-      <h5 class="card-title text-center">${manager.getName()}</h5>
-      <h6 class="card-subtitle mb-2 text-muted text-center">${manager.getRole()};
-      </h6>
+      <h5 class="card-title text-center"> ${manager.getName()} </h5>
+      <h6 class="card-subtitle mb-2 text-muted text-center"> ${manager.getRole()} </h6>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID:${manager.getId()}</li>
-        <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-        <li class="list-group-item">Office #: ${manager.getOffice()};</li>
+        <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}"> ${manager.getEmail()} </a></li>
+        <li class="list-group-item">Office #: ${manager.getOffice()} </li>
       </ul>
     </div>
   </div>
@@ -21,12 +20,12 @@ buildManager = (manager) => {
 
 //Engineer 
 
-buildEngineer = (engineer) => {
+const buildEngineer = (engineer) => {
     return `
     <div class="card" style="width: 18rem; margin: 15px;">
     <div class="card-body bg-warning">
-      <h5 class="card-title text-center">${engineer.getName()}</h5>
-      <h6 class="card-subtitle mb-2 text-muted text-center">${engineer.getRole()}</h6>
+      <h5 class="card-title text-center"> ${engineer.getName()} </h5>
+      <h6 class="card-subtitle mb-2 text-muted text-center"> ${engineer.getRole()} </h6>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID:${engineer.getId()}</li>
         <li class="list-group-item">Email:<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
@@ -40,12 +39,12 @@ buildEngineer = (engineer) => {
 //Intern
 
 
-buildIntern = (intern) => {
+const buildIntern = (intern) => {
     return `
     <div class="card" style="width: 18rem; margin: 15px;">
     <div class="card-body bg-success">
-      <h5 class="card-title text-center">${intern.getName()};</h5>
-      <h6 class="card-subtitle mb-2 text-muted text-center">${intern.getRole()};</h6>
+      <h5 class="card-title text-center">${intern.getName()} </h5>
+      <h6 class="card-subtitle mb-2 text-muted text-center">${intern.getRole()} </h6>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID:${intern.getId()}</li>
         <li class="list-group-item">Email:<a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
@@ -56,10 +55,30 @@ buildIntern = (intern) => {
   `
 }
 
+const makeEmployee = (emp) =>{
+  switch (emp.getRole()) {
+    case "Manager":
+      return buildManager(emp);
+      break;
+
+      case "Engineer":
+        return buildEngineer(emp);
+        break;
+
+        case "Intern":
+      return buildIntern(emp);
+      break;
+  
+    default:
+      break;
+  }
+}
+
+
 //The page
 
-makeTeam =(Team)=> {
-
+const makeHTML =(Team)=> {
+const teamCards = Team.map(member => makeEmployee(member)).join('')
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -78,17 +97,8 @@ makeTeam =(Team)=> {
     </div>     
     
     <div class="card-group"> 
-     
-    <!-- Engineer -->
-    ${buildEngineer(Team)}
-        
-    <!-- Manager -->
-    
-    ${buildManager(Team)}
-    
-    <!-- Intern -->
-    
-    ${buildIntern(Team)}       
+
+    ${teamCards}    
    
     </div>
     
@@ -100,4 +110,4 @@ makeTeam =(Team)=> {
     `;
 };
 
-module.exports = buildHTML; 
+module.exports = makeHTML; 
