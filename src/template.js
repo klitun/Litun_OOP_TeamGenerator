@@ -6,7 +6,7 @@ const buildManager = (manager) => {
 <div class="card" style="width: 18rem; margin: 15px;">
     <div class="card-body bg-info">
       <h5 class="card-title text-center"> ${manager.getName()} </h5>
-      <h6 class="card-subtitle mb-2 text-muted text-center"> ${manager.getRole()} </h6>
+      <h6 class="card-subtitle mb-2 text-white text-center"> ${manager.getRole()} </h6>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID:${manager.getId()}</li>
         <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}"> ${manager.getEmail()} </a></li>
@@ -25,7 +25,7 @@ const buildEngineer = (engineer) => {
     <div class="card" style="width: 18rem; margin: 15px;">
     <div class="card-body bg-warning">
       <h5 class="card-title text-center"> ${engineer.getName()} </h5>
-      <h6 class="card-subtitle mb-2 text-muted text-center"> ${engineer.getRole()} </h6>
+      <h6 class="card-subtitle mb-2 text-white text-center"> ${engineer.getRole()} </h6>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID:${engineer.getId()}</li>
         <li class="list-group-item">Email:<a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
@@ -44,7 +44,7 @@ const buildIntern = (intern) => {
     <div class="card" style="width: 18rem; margin: 15px;">
     <div class="card-body bg-success">
       <h5 class="card-title text-center">${intern.getName()} </h5>
-      <h6 class="card-subtitle mb-2 text-muted text-center">${intern.getRole()} </h6>
+      <h6 class="card-subtitle mb-2 text-white text-center">${intern.getRole()} </h6>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID:${intern.getId()}</li>
         <li class="list-group-item">Email:<a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>

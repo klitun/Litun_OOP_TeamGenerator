@@ -1,13 +1,9 @@
 # 10 Object-Oriented Programming: Team Profile Generator
 
 
-## User Story
+## Description
 
-```md
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
-```
+Command-line application that generates an HTML file to the dist folder using users Inquiry input
 
 ## Acceptance Criteria
 
@@ -33,7 +29,22 @@ THEN I exit the application, and the HTML is generated
 
 ## Screenshot
 
-![HTML webpage with cards of team members.](./Assets/10-object-oriented-programming-homework-demo.png)
+![HTML webpage with cards of team members.](./assets/screenshot.png)
 
-## Getting Started
+
+## Installation and Usage
+```
+Run npm i to install dependancies
+Run node index to start
+html file written to dist folder
+```
+## Testing
+```
+Node test to test
+All test files in tests folder
+```
+
+## Video Link
+
+[Video on Google Drive](https://drive.google.com/file/d/1rCTmAK2Z-Xi4t8TkERAxVUcTz2BFd9R9/view)
 
